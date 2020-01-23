@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport Version="1">
-  <ExportedFolder Id="0e215497-75a7-410b-a61c-8cf30371a832" Name="自动录屏" Enabled="true">
+  <ExportedFolder Id="0e215497-75a7-410b-a61c-8cf30371a832" Name="自动录屏  （by 林佳树@红玉海）" Enabled="true">
     <Folders>
       <Folder Id="fa2348d2-4d3d-4ad7-83c2-61050acc77f3" Name="“仅限当前副本内”开关    （指令：启用录像）" Enabled="false">
         <Folders />
@@ -52,6 +52,21 @@
           <Trigger Enabled="true" Sequential="True" Name="auto_save" Id="8fa783bb-f8f0-494c-b81c-0725e6dbbf4b" RegularExpression=".*" PeriodRefire="Deny" RefirePeriodExpression="30000">
             <Actions>
               <Action OrderNumber="1" TextAuraFontSize="9" TextAuraFontName="宋体" TriggerOp="DisableTrigger" TriggerId="810d7230-3aac-4b7b-a027-64efdf932b80" ActionType="Trigger">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+            <Conditions />
+          </Trigger>
+        </Triggers>
+      </Folder>
+      <Folder Id="ef18aaa3-fa26-4655-88e1-806f12595710" Name="说明书（README）" Enabled="true">
+        <Folders />
+        <Triggers>
+          <Trigger Enabled="true" Name="https://github.com/yoyokity/FFXIV" Id="bca3fcb1-34c8-459b-bee2-2a7cd39d2319" RegularExpression="" Description="https://github.com/yoyokity/FFXIV">
+            <Actions>
+              <Action OrderNumber="1" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="SystemBeep" Description="复制上面网页到浏览器打开。" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
                 <Conditions />
               </Action>
