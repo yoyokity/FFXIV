@@ -39,13 +39,13 @@
 
     ![enter description here](https://i.loli.net/2020/01/24/1aEUj5oZngyVxQu.png)
 
-A-Z,0-9就正常输入进去，如果是其他键像F1、F4这样的，记得加上花括号{}哦，如：{F1}
-如果是组合键，加上前缀就行。
- shift —— + 
-ctrl      —— ^ 
-alt       —— %
-比如alt+F9就输入“%{F9}”。
-[更多详细用法可以点我去微软官方查看](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.sendkeys.send?redirectedfrom=MSDN&view=netframework-4.8#System_Windows_Forms_SendKeys_Send_System_String_)
+    A-Z,0-9就正常输入进去，如果是其他键像F1、F4这样的，记得加上花括号{}哦，如：{F1}
+    如果是组合键，加上前缀就行。
+    shift —— + 
+    ctrl      —— ^ 
+    alt       —— %
+    比如alt+F9就输入“%{F9}”。
+    [更多详细用法可以点我去微软官方查看](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.sendkeys.send?    redirectedfrom=MSDN&view=netframework-4.8#System_Windows_Forms_SendKeys_Send_System_String_)
 
 > **高级用法：**
 > 如果你觉得每次进想要录屏的副本都要手动开关触发器太麻烦，这边有更懒人的方案。
