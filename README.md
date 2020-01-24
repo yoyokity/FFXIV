@@ -54,6 +54,6 @@
     [更多详细用法可以点我去微软官方查看](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.sendkeys.send?redirectedfrom=MSDN&view=netframework-4.8#System_Windows_Forms_SendKeys_Send_System_String_)
 
 > **高级用法：**
-
+>
 > 如果你觉得每次进想要录屏的副本都要手动开关触发器太麻烦，这边有更懒人的方案。
 > - 勾上“仅限当前副本内开关”后，录屏触发器会默认关闭，每次你进入了你想要录屏的副本后，只需要在聊天框里输入“**启用录像**”或者“**video on**”这两个指令，工具就会在当前副本里自动录下你每一把的战斗。并且当你退出副本后，触发器随即就会关闭。
