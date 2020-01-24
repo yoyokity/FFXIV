@@ -45,7 +45,7 @@
     ctrl      —— ^ 
     alt       —— %
     比如alt+F9就输入“%{F9}”。
-    [更多详细用法可以点我去微软官方查看](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.sendkeys.send?    redirectedfrom=MSDN&view=netframework-4.8#System_Windows_Forms_SendKeys_Send_System_String_)
+    [更多详细用法可以点我去微软官方查看](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.sendkeys.send?redirectedfrom=MSDN&view=netframework-4.8#System_Windows_Forms_SendKeys_Send_System_String_)
 
 > **高级用法：**
 > 如果你觉得每次进想要录屏的副本都要手动开关触发器太麻烦，这边有更懒人的方案。
