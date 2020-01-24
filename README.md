@@ -38,6 +38,7 @@
  3. 修改你自己电脑的录屏快捷键。
 
     ![enter description here](https://i.loli.net/2020/01/24/1aEUj5oZngyVxQu.png)
+
 A-Z,0-9就正常输入进去，如果是其他键像F1、F4这样的，记得加上花括号{}哦，如：{F1}
 如果是组合键，加上前缀就行。
  shift —— + 
