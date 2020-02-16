@@ -1,80 +1,195 @@
 <?xml version="1.0"?>
 <TriggernometryExport Version="1">
-  <ExportedTrigger Enabled="false" Name="触发器" Id="f79a2d36-8f9c-4bd9-b092-492e7f5e8d63" RegularExpression="] 19:(?&lt;d_name&gt;.*) was defeated by (?&lt;k_name&gt;.*).">
-    <Actions>
-      <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="kill" VariableExpression="${var:kill}+1" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
-        <Condition Enabled="true" Grouping="Or">
-          <ConditionSingle Enabled="true" ExpressionL="${k_name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+  <ExportedFolder Id="5b4230eb-c206-411f-89f3-c75738cdf2db" Name="战场统计（by 林佳树@红玉海）" Enabled="true">
+    <Folders />
+    <Triggers>
+      <Trigger Enabled="false" Name="触发器" Id="f79a2d36-8f9c-4bd9-b092-492e7f5e8d63" RegularExpression="] 19:(?&lt;d_name&gt;.*) was defeated by (?&lt;k_name&gt;.*).">
+        <Actions>
+          <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="kill" VariableExpression="${var:kill}+1" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${k_name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="killtts" VariableExpression="${var:killtts}+1" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${k_name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="3" VariableOp="SetNumeric" VariableName="death" VariableExpression="${var:death}+1" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${d_name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="4" VariableOp="SetNumeric" VariableName="killtts" VariableExpression="0" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${d_name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="5" VariableOp="SetNumeric" VariableName="kd" VariableExpression="-1" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${d_name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="6" VariableOp="SetNumeric" VariableName="kd" VariableExpression="-1" TextAuraOp="DeactivateAura" TextAuraFontSize="9" TextAuraName="你杀人" TextAuraFontName="宋体" ActionType="TextAura">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${d_name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="7" VariableOp="SetNumeric" VariableName="kd" VariableExpression="1" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${k_name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="8" VariableOp="SetString" VariableName="killname" VariableExpression="${k_name}" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="9" VariableOp="SetString" VariableName="deathname" VariableExpression="${d_name}" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="10" TextAuraFontSize="9" TextAuraFontName="宋体" TriggerId="9cbadd4c-049d-4a18-b4b4-a3d8cd1bbe62" TriggerForce="regexp" ActionType="Trigger">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="11" TextAuraFontSize="9" TextAuraFontName="宋体" TriggerId="e18b1800-1086-4c2c-af65-13eee64021c7" TriggerForce="regexp" ActionType="Trigger">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${k_name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="12" VariableOp="SetNumeric" VariableName="killtts" VariableExpression="0" TextAuraOp="DeactivateAura" TextAuraFontSize="9" TextAuraName="testliansha" TextAuraFontName="宋体" ActionType="TextAura">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${d_name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+            </Condition>
+          </Action>
+        </Actions>
+        <Condition Enabled="true" Grouping="And">
+          <ConditionGroup Enabled="true" Grouping="Or">
+            <ConditionSingle Enabled="true" ExpressionL="${d_name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+            <ConditionSingle Enabled="true" ExpressionL="${k_name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+          </ConditionGroup>
+          <ConditionSingle Enabled="true" ExpressionL="${d_name}" ExpressionTypeL="String" ExpressionR="冰封的石文.*|截击无人机" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
         </Condition>
-        <Conditions />
-      </Action>
-      <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="killtts" VariableExpression="${var:killtts}+1" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
-        <Condition Enabled="true" Grouping="Or">
-          <ConditionSingle Enabled="true" ExpressionL="${k_name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-        </Condition>
-        <Conditions />
-      </Action>
-      <Action OrderNumber="3" VariableOp="SetNumeric" VariableName="death" VariableExpression="${var:death}+1" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
-        <Condition Enabled="true" Grouping="Or">
-          <ConditionSingle Enabled="true" ExpressionL="${d_name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-        </Condition>
-        <Conditions />
-      </Action>
-      <Action OrderNumber="4" VariableOp="SetNumeric" VariableName="killtts" VariableExpression="0" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
-        <Condition Enabled="true" Grouping="Or">
-          <ConditionSingle Enabled="true" ExpressionL="${d_name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-        </Condition>
-        <Conditions />
-      </Action>
-      <Action OrderNumber="5" VariableOp="SetNumeric" VariableName="kd" VariableExpression="-1" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
-        <Condition Enabled="true" Grouping="Or">
-          <ConditionSingle Enabled="true" ExpressionL="${d_name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-        </Condition>
-        <Conditions />
-      </Action>
-      <Action OrderNumber="6" VariableOp="SetNumeric" VariableName="kd" VariableExpression="-1" TextAuraOp="DeactivateAura" TextAuraFontSize="9" TextAuraName="你杀人" TextAuraFontName="宋体" ActionType="TextAura">
-        <Condition Enabled="true" Grouping="Or">
-          <ConditionSingle Enabled="true" ExpressionL="${d_name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-        </Condition>
-        <Conditions />
-      </Action>
-      <Action OrderNumber="7" VariableOp="SetNumeric" VariableName="kd" VariableExpression="1" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
-        <Condition Enabled="true" Grouping="Or">
-          <ConditionSingle Enabled="true" ExpressionL="${k_name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-        </Condition>
-        <Conditions />
-      </Action>
-      <Action OrderNumber="8" VariableOp="SetString" VariableName="killname" VariableExpression="${k_name}" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+      </Trigger>
+      <Trigger Enabled="true" Name="初始化" Id="778d12f7-0d1f-4c62-b41b-27178e4e9f33" RegularExpression="以自由身份加入了.*阵营">
+        <Actions>
+          <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="kill" VariableExpression="0" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="killtts" VariableExpression="0" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="3" VariableOp="SetNumeric" VariableName="death" VariableExpression="0" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="4" VariableOp="SetString" VariableName="killname" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="5" VariableOp="SetString" VariableName="deathname" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="6" TextAuraAlignment="MiddleLeft" TextAuraEffect="Bold" TextAuraFontSize="27.75" TextAuraForeground="White" TextAuraOutline="Black" TextAuraName="test" TextAuraExpression="K:${var:kill} / D:${var:death} " TextAuraXIniExpression="1188" TextAuraYIniExpression="410" TextAuraWIniExpression="291" TextAuraHIniExpression="57" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="宋体" ActionType="TextAura">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="7" TextAuraFontSize="9" TextAuraFontName="宋体" TriggerOp="EnableTrigger" TriggerId="f79a2d36-8f9c-4bd9-b092-492e7f5e8d63" ActionType="Trigger">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="8" VariableOp="SetString" VariableName="fb" VariableExpression="1" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+        </Actions>
         <Condition Enabled="false" Grouping="Or" />
-        <Conditions />
-      </Action>
-      <Action OrderNumber="9" VariableOp="SetString" VariableName="deathname" VariableExpression="${d_name}" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+      </Trigger>
+      <Trigger Enabled="true" Name="文本显示" Id="9cbadd4c-049d-4a18-b4b4-a3d8cd1bbe62" RegularExpression="">
+        <Actions>
+          <Action OrderNumber="1" TextAuraAlignment="MiddleLeft" TextAuraEffect="Bold" TextAuraFontSize="27.75" TextAuraForeground="White" TextAuraOutline="Black" TextAuraName="test" TextAuraExpression="K:${var:kill} / D:${var:death} " TextAuraXIniExpression="1188" TextAuraYIniExpression="410" TextAuraWIniExpression="291" TextAuraHIniExpression="57" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="宋体" ActionType="TextAura">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="2" TextAuraAlignment="MiddleLeft" TextAuraFontSize="26.25" TextAuraForeground="White" TextAuraOutline="Black" TextAuraName="testliansha" TextAuraExpression="连杀:${var:killtts}" TextAuraXIniExpression="1183" TextAuraYIniExpression="457" TextAuraWIniExpression="291" TextAuraHIniExpression="39" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="宋体" ActionType="TextAura">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${var:killtts}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="3" TextAuraAlignment="MiddleLeft" TextAuraEffect="Bold" TextAuraFontSize="20.25" TextAuraForeground="White" TextAuraOutline="Black" TextAuraName="你杀人" TextAuraExpression="你杀死了${var:deathname}" TextAuraXIniExpression="1191" TextAuraYIniExpression="598" TextAuraWIniExpression="291" TextAuraHIniExpression="29" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="宋体" ActionType="TextAura">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:kd}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="4" TextAuraAlignment="MiddleLeft" TextAuraEffect="Bold" TextAuraFontSize="18" TextAuraForeground="Red" TextAuraOutline="Black" TextAuraName="你被杀" TextAuraExpression="你被 ${var:killname} 杀死了。。。" TextAuraXIniExpression="1192" TextAuraYIniExpression="632" TextAuraWIniExpression="368" TextAuraHIniExpression="28" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="宋体" ActionType="TextAura">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${var:kd}" ExpressionTypeL="Numeric" ExpressionR="-1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="5" TextAuraOp="DeactivateAura" TextAuraAlignment="MiddleLeft" TextAuraFontSize="18" TextAuraForeground="White" TextAuraOutline="Black" TextAuraName="你被杀" TextAuraExpression="你杀死了${d_name}" TextAuraXIniExpression="1198" TextAuraYIniExpression="607" TextAuraWIniExpression="291" TextAuraHIniExpression="57" TextAuraOIniExpression="100" TextAuraFontName="宋体" ActionType="TextAura" ExecutionDelayExpression="15000">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+        </Actions>
         <Condition Enabled="false" Grouping="Or" />
-        <Conditions />
-      </Action>
-      <Action OrderNumber="10" TextAuraFontSize="9" TextAuraFontName="宋体" TriggerId="9cbadd4c-049d-4a18-b4b4-a3d8cd1bbe62" TriggerForce="regexp" ActionType="Trigger">
+      </Trigger>
+      <Trigger Enabled="true" Name="连杀tts" Id="e18b1800-1086-4c2c-af65-13eee64021c7" RegularExpression="">
+        <Actions>
+          <Action OrderNumber="1" UseTTSTextExpression="killing spree" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${var:killtts}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="2" UseTTSTextExpression="dominating" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${var:killtts}" ExpressionTypeL="Numeric" ExpressionR="4" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="3" UseTTSTextExpression="mega kill" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${var:killtts}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="4" UseTTSTextExpression="unstoppable" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${var:killtts}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="5" UseTTSTextExpression="wicky sick" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${var:killtts}" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="6" UseTTSTextExpression="monser kill" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${var:killtts}" ExpressionTypeL="Numeric" ExpressionR="8" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="7" UseTTSTextExpression="god like" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${var:killtts}" ExpressionTypeL="Numeric" ExpressionR="9" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="8" UseTTSTextExpression="holy ,shit" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS">
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${var:killtts}" ExpressionTypeL="Numeric" ExpressionR="10" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="9" UseTTSTextExpression="first blood" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS">
+            <Condition Enabled="true" Grouping="And">
+              <ConditionSingle Enabled="true" ExpressionL="${var:fb}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="RegexMatch" />
+              <ConditionSingle Enabled="true" ExpressionL="${var:killtts}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+            </Condition>
+          </Action>
+          <Action OrderNumber="10" VariableOp="SetNumeric" VariableName="fb" VariableExpression="0" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+            <Condition Enabled="true" Grouping="Or" />
+          </Action>
+        </Actions>
         <Condition Enabled="false" Grouping="Or" />
-        <Conditions />
-      </Action>
-      <Action OrderNumber="11" TextAuraFontSize="9" TextAuraFontName="宋体" TriggerId="e18b1800-1086-4c2c-af65-13eee64021c7" TriggerForce="regexp" ActionType="Trigger">
-        <Condition Enabled="true" Grouping="Or">
-          <ConditionSingle Enabled="true" ExpressionL="${k_name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-        </Condition>
-        <Conditions />
-      </Action>
-      <Action OrderNumber="12" VariableOp="SetNumeric" VariableName="killtts" VariableExpression="0" TextAuraOp="DeactivateAura" TextAuraFontSize="9" TextAuraName="testliansha" TextAuraFontName="宋体" ActionType="TextAura">
-        <Condition Enabled="true" Grouping="Or">
-          <ConditionSingle Enabled="true" ExpressionL="${d_name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-        </Condition>
-        <Conditions />
-      </Action>
-    </Actions>
-    <Condition Enabled="true" Grouping="And">
-      <ConditionGroup Enabled="true" Grouping="Or">
-        <ConditionSingle Enabled="true" ExpressionL="${d_name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-        <ConditionSingle Enabled="true" ExpressionL="${k_name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-      </ConditionGroup>
-      <ConditionSingle Enabled="true" ExpressionL="${d_name}" ExpressionTypeL="String" ExpressionR="冰封的石文.*|截击无人机" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
-    </Condition>
-  </ExportedTrigger>
+      </Trigger>
+      <Trigger Enabled="true" Name="关闭" Id="e612eff6-031e-47b0-ad2f-d6a833572720" RegularExpression="(?&lt;name&gt;.*)获得了.*枚狼印战绩。">
+        <Actions>
+          <Action OrderNumber="1" TextAuraFontSize="9" TextAuraFontName="宋体" TriggerOp="DisableTrigger" TriggerId="f79a2d36-8f9c-4bd9-b092-492e7f5e8d63" ActionType="Trigger">
+            <Condition Enabled="false" Grouping="Or" />
+            <Conditions />
+          </Action>
+          <Action OrderNumber="2" TextAuraOp="DeactivateAllAura" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="TextAura" ExecutionDelayExpression="15000">
+            <Condition Enabled="false" Grouping="Or" />
+            <Conditions />
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+      </Trigger>
+    </Triggers>
+  </ExportedFolder>
 </TriggernometryExport>
