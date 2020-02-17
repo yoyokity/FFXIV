@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<TriggernometryExport Version="1">
+  <ExportedFolder Id="8e836859-d147-4fa2-b7a6-7aaa2b5348dd" Name="游戏私聊QQ提醒" Enabled="true">
+    <Folders />
+    <Triggers>
+      <Trigger Enabled="true" Sequential="True" Name="触发器" Id="ba0c15d6-f0ef-4ae3-a3c3-83ac52d2261f" RegularExpression="] 00:000d:(?&lt;name&gt;.*) &gt;&gt; (?&lt;test&gt;.*)" Scheduling="FromLastAction">
+        <Actions>
+          <Action OrderNumber="1" TextAuraFontSize="9" TextAuraFontName="宋体" TriggerId="26e459a8-f476-404c-82bc-e1bc51ade228" TriggerForce="regexp,conditions" ActionType="Trigger" Asynchronous="False">
+            <Condition Enabled="false" Grouping="Or" />
+            <Conditions />
+          </Action>
+          <Action OrderNumber="2" DiscordWebhookURL="https://xn--v9x.net/api/?tracker=qq&amp;bot_qq=${var:机器人qq}&amp;qq=${var:你的qq}&amp;token=${var:token}" DiscordWebhookMessage="${name}向你发送私聊：${test}" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="DiscordWebhook">
+            <Condition Enabled="false" Grouping="Or" />
+            <Conditions />
+          </Action>
+          <Action OrderNumber="3" SystemBeepFreqExpression="0" SystemBeepLengthExpression="0" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="SystemBeep" ExecutionDelayExpression="5000">
+            <Condition Enabled="false" Grouping="Or" />
+            <Conditions />
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+        <Conditions />
+      </Trigger>
+      <Trigger Enabled="true" Name="设置" Id="26e459a8-f476-404c-82bc-e1bc51ade228" RegularExpression="">
+        <Actions>
+          <Action OrderNumber="1" VariableOp="SetString" VariableName="你的qq" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+            <Conditions />
+          </Action>
+          <Action OrderNumber="2" VariableOp="SetString" VariableName="机器人qq" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+            <Conditions />
+          </Action>
+          <Action OrderNumber="3" VariableOp="SetString" VariableName="token" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+            <Condition Enabled="false" Grouping="Or" />
+            <Conditions />
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+        <Conditions />
+      </Trigger>
+      <Trigger Enabled="true" Name="帮助页面：https://github.com/yoyokity/FFXIV" Id="9f94d16e-a530-4271-a336-3fbe523d5760" RegularExpression="" Description="打">
+        <Actions />
+        <Condition Enabled="false" Grouping="Or" />
+        <Conditions />
+      </Trigger>
+    </Triggers>
+  </ExportedFolder>
+</TriggernometryExport>
