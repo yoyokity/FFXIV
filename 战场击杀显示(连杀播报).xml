@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport Version="1">
-  <ExportedFolder Id="5b4230eb-c206-411f-89f3-c75738cdf2db" Name="战场统计（by 林佳树@红玉海）" Enabled="true">
+  <ExportedFolder Id="5b4230eb-c206-411f-89f3-c75738cdf2db" Name="战场统计（by yoyokity）" Enabled="false">
     <Folders />
     <Triggers>
       <Trigger Enabled="false" Name="触发器" Id="f79a2d36-8f9c-4bd9-b092-492e7f5e8d63" RegularExpression="] 19:(?&lt;d_name&gt;.*) was defeated by (?&lt;k_name&gt;.*).">
@@ -181,11 +181,9 @@
         <Actions>
           <Action OrderNumber="1" TextAuraFontSize="9" TextAuraFontName="宋体" TriggerOp="DisableTrigger" TriggerId="f79a2d36-8f9c-4bd9-b092-492e7f5e8d63" ActionType="Trigger">
             <Condition Enabled="false" Grouping="Or" />
-            <Conditions />
           </Action>
           <Action OrderNumber="2" TextAuraOp="DeactivateAllAura" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="TextAura" ExecutionDelayExpression="15000">
             <Condition Enabled="false" Grouping="Or" />
-            <Conditions />
           </Action>
         </Actions>
         <Condition Enabled="false" Grouping="Or" />
