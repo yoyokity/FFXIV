@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport Version="1">
-  <ExportedFolder Id="0e215497-75a7-410b-a61c-8cf30371a832" Name="自动录屏  （by 林佳树@红玉海）" Enabled="true">
+  <ExportedFolder Id="0e215497-75a7-410b-a61c-8cf30371a832" Name="自动录屏  （BY yoyokity）" Enabled="false">
     <Folders>
       <Folder Id="fa2348d2-4d3d-4ad7-83c2-61050acc77f3" Name="“仅限当前副本内”开关    （指令：启用录像）" Enabled="false">
         <Folders />
@@ -9,23 +9,18 @@
             <Actions>
               <Action OrderNumber="1" SystemBeepFreqExpression="1500" SystemBeepLengthExpression="200" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="SystemBeep" ExecutionDelayExpression="150">
                 <Condition Enabled="false" Grouping="Or" />
-                <Conditions />
               </Action>
               <Action OrderNumber="2" UseTTSTextExpression="录像功能已启用" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="UseTTS" ExecutionDelayExpression="1000">
                 <Condition Enabled="false" Grouping="Or" />
-                <Conditions />
               </Action>
               <Action OrderNumber="3" TextAuraFontSize="9" TextAuraFontName="宋体" TriggerOp="DisableTrigger" TriggerId="8fa783bb-f8f0-494c-b81c-0725e6dbbf4b" ActionType="Trigger">
                 <Condition Enabled="false" Grouping="Or" />
-                <Conditions />
               </Action>
               <Action OrderNumber="4" TextAuraFontSize="9" TextAuraFontName="宋体" TriggerOp="EnableTrigger" TriggerId="810d7230-3aac-4b7b-a027-64efdf932b80" TriggerForce="regexp,conditions" ActionType="Trigger">
                 <Condition Enabled="false" Grouping="Or" />
-                <Conditions />
               </Action>
               <Action OrderNumber="5" SystemBeepFreqExpression="700" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="SystemBeep">
                 <Condition Enabled="false" Grouping="Or" />
-                <Conditions />
               </Action>
             </Actions>
             <Condition Enabled="false" Grouping="Or" />
@@ -69,11 +64,10 @@
       </Folder>
     </Folders>
     <Triggers>
-      <Trigger Enabled="true" Name="录制" Id="810d7230-3aac-4b7b-a027-64efdf932b80" RegularExpression="(距离战斗开始还有10秒|21:[A-F0-9]{8}:40000010)" PeriodRefire="Deny" RefirePeriodExpression="15000">
+      <Trigger Enabled="true" Name="录制" Id="810d7230-3aac-4b7b-a027-64efdf932b80" RegularExpression="距离战斗开始还有10秒|21:[A-F0-9]{8}:40000010" PeriodRefire="Deny" RefirePeriodExpression="15000">
         <Actions>
           <Action OrderNumber="1" KeyPressExpression="%{F9}" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="KeyPress">
             <Condition Enabled="false" Grouping="Or" />
-            <Conditions />
           </Action>
         </Actions>
         <Condition Enabled="false" Grouping="Or" />

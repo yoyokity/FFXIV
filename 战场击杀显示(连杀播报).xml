@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport Version="1">
-  <ExportedFolder Id="5b4230eb-c206-411f-89f3-c75738cdf2db" Name="战场统计（by yoyokity）" Enabled="false">
+  <ExportedFolder Id="5b4230eb-c206-411f-89f3-c75738cdf2db" Name="战场统计（by yoyokity）" Enabled="true">
     <Folders />
     <Triggers>
       <Trigger Enabled="false" Name="触发器" Id="f79a2d36-8f9c-4bd9-b092-492e7f5e8d63" RegularExpression="] 19:(?&lt;d_name&gt;.*) was defeated by (?&lt;k_name&gt;.*).">
