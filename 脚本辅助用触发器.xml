@@ -1,0 +1,318 @@
+<?xml version="1.0"?>
+<TriggernometryExport Version="1">
+  <ExportedFolder Id="a99be074-661b-4824-8817-bd031a171223" Name="脚本辅助触发器 (BY yoyokity)" Enabled="false">
+    <Folders>
+      <Folder Id="38f11243-150b-4b20-9ad2-4b16e03954c8" Name="打本练级辅助" Enabled="true">
+        <Folders />
+        <Triggers>
+          <Trigger Enabled="true" Name="升到XX级后，自动关闭" Id="7d0adea4-2c48-4b8a-9044-9f3514943eec" RegularExpression="等级提升了！  (?&lt;name&gt;.*)升到了80级">
+            <Actions>
+              <Action OrderNumber="1" LogMessageText="FZ_get_shutdown_action" LogProcess="True" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="LogMessage">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="2" LogMessageText="FZ_shutdown:美月爹地最终幻想XIV2019" LogProcess="True" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="LogMessage" ExecutionDelayExpression="1000">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:action}" ExpressionTypeL="String" ExpressionR="脚本" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="3" LogMessageText="FZ_shutdown:MINIONAPP" LogProcess="True" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="LogMessage">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:action}" ExpressionTypeL="String" ExpressionR="脚本" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="4" LogMessageText="FZ_shutdown:RebornBuddy" LogProcess="True" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="LogMessage">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:action}" ExpressionTypeL="String" ExpressionR="脚本" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="5" LogMessageText="FZ_shutdown:ffxiv_dx11" LogProcess="True" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="LogMessage">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:action}" ExpressionTypeL="String" ExpressionR="游戏" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="6" LogMessageText="FZ_shutdown:ffxiv" LogProcess="True" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="LogMessage">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:action}" ExpressionTypeL="String" ExpressionR="游戏" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="7" LogMessageText="FZ_shutdown:computer" LogProcess="True" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="LogMessage">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:action}" ExpressionTypeL="String" ExpressionR="电脑" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="8" LogMessageText="FZ_QQBOT:已经升到了规定等级，已为您关闭${var:action}。" LogProcess="True" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="LogMessage" ExecutionDelayExpression="5000">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+            </Condition>
+            <Conditions />
+          </Trigger>
+          <Trigger Enabled="true" Name="升级提醒" Id="dd30d318-127a-4eb0-8a1b-3bbca16b2e10" RegularExpression="等级提升了！  (?&lt;name&gt;.*)升到了(?&lt;level&gt;.*)级">
+            <Actions>
+              <Action OrderNumber="1" LogMessageText="FZ_QQBOT:等级提升了！你升到了${level}级。" LogProcess="True" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="LogMessage">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="true" Grouping="Or">
+              <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+            </Condition>
+            <Conditions />
+          </Trigger>
+          <Trigger Enabled="false" Name="打完XX次副本后，自动关闭（重置请重启ACT）（次数上限自己双击设置）" Id="0025c926-e009-4049-a1b6-d2c1544a323c" RegularExpression="任务结束了">
+            <Actions>
+              <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="次数上限" VariableExpression="9" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="2" LogMessageText="FZ_get_shutdown_action" LogProcess="True" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="LogMessage">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="3" VariableOp="SetNumeric" VariableName="副本次数" VariableExpression="${var:副本次数}+1" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="4" LogMessageText="FZ_shutdown:美月爹地最终幻想XIV2019" LogProcess="True" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="LogMessage" ExecutionDelayExpression="1000">
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:action}" ExpressionTypeL="String" ExpressionR="脚本" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:次数上限}" ExpressionTypeL="Numeric" ExpressionR="${var:副本次数}" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="5" LogMessageText="FZ_shutdown:MINIONAPP" LogProcess="True" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="LogMessage">
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:action}" ExpressionTypeL="String" ExpressionR="脚本" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:次数上限}" ExpressionTypeL="Numeric" ExpressionR="${var:副本次数}" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="6" LogMessageText="FZ_shutdown:RebornBuddy" LogProcess="True" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="LogMessage">
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:action}" ExpressionTypeL="String" ExpressionR="脚本" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:次数上限}" ExpressionTypeL="Numeric" ExpressionR="${var:副本次数}" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="7" LogMessageText="FZ_shutdown:ffxiv_dx11" LogProcess="True" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="LogMessage">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:action}" ExpressionTypeL="String" ExpressionR="游戏" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:次数上限}" ExpressionTypeL="Numeric" ExpressionR="${var:副本次数}" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="8" LogMessageText="FZ_shutdown:ffxiv" LogProcess="True" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="LogMessage">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:action}" ExpressionTypeL="String" ExpressionR="游戏" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:次数上限}" ExpressionTypeL="Numeric" ExpressionR="${var:副本次数}" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="9" LogMessageText="FZ_shutdown:computer" LogProcess="True" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="LogMessage">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:action}" ExpressionTypeL="String" ExpressionR="电脑" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                  <ConditionSingle Enabled="true" ExpressionL="${var:次数上限}" ExpressionTypeL="Numeric" ExpressionR="${var:副本次数}" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="10" LogMessageText="FZ_QQBOT:已经打完副本${var:副本次数}次，已为您关闭${var:action}。" LogProcess="True" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="LogMessage" ExecutionDelayExpression="5000">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+            <Conditions />
+          </Trigger>
+        </Triggers>
+      </Folder>
+      <Folder Id="de7bfb61-1916-4349-bced-b9ea9bd9fd4c" Name="被私聊后QQ提醒你" Enabled="true">
+        <Folders />
+        <Triggers>
+          <Trigger Enabled="true" Sequential="True" Name="私聊QQ转告" Id="8010f7db-1774-4eda-a369-1167b22eb982" RegularExpression="] 00:000d:(?&lt;name&gt;.*?):(?&lt;test&gt;.*)" Scheduling="FromLastAction">
+            <Actions>
+              <Action OrderNumber="1" LogMessageText="FZ_QQBOT:${name}向你发送私聊：${test}" LogProcess="True" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="LogMessage">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+            <Conditions />
+          </Trigger>
+          <Trigger Enabled="false" Name="被私聊直接关闭（对应设置里的关闭方式）" Id="a9d4344d-0351-4d73-b372-c67c0b837491" RegularExpression="] 00:000d:(?&lt;name&gt;.*?):(?&lt;test&gt;.*)">
+            <Actions>
+              <Action OrderNumber="1" LogMessageText="FZ_get_shutdown_action" LogProcess="True" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="LogMessage">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="2" LogMessageText="FZ_shutdown:美月爹地最终幻想XIV2019" LogProcess="True" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="LogMessage" ExecutionDelayExpression="1000">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:action}" ExpressionTypeL="String" ExpressionR="脚本" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="3" LogMessageText="FZ_shutdown:MINIONAPP" LogProcess="True" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="LogMessage">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:action}" ExpressionTypeL="String" ExpressionR="脚本" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="4" LogMessageText="FZ_shutdown:RebornBuddy" LogProcess="True" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="LogMessage">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:action}" ExpressionTypeL="String" ExpressionR="脚本" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="5" LogMessageText="FZ_shutdown:ffxiv_dx11" LogProcess="True" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="LogMessage">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:action}" ExpressionTypeL="String" ExpressionR="游戏" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="6" LogMessageText="FZ_shutdown:ffxiv" LogProcess="True" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="LogMessage">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:action}" ExpressionTypeL="String" ExpressionR="游戏" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="7" LogMessageText="FZ_shutdown:computer" LogProcess="True" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="LogMessage">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${var:action}" ExpressionTypeL="String" ExpressionR="电脑" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="8" LogMessageText="FZ_QQBOT:由于被私聊，已为您关闭${var:action}。" LogProcess="True" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="LogMessage" ExecutionDelayExpression="5000">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+            <Conditions />
+          </Trigger>
+        </Triggers>
+      </Folder>
+      <Folder Id="0a17e58c-309e-42bc-976c-18b3a7a8fc5c" Name=" 设置" Enabled="true">
+        <Folders>
+          <Folder Id="ff4573c1-a44b-40ff-b897-09d67d3f89be" Name="自动关闭方式（三选一，不可多选）" Enabled="true">
+            <Folders />
+            <Triggers>
+              <Trigger Enabled="false" Name="关闭脚本 （美月、RB、MINI）" Id="352b15b0-9d43-43c3-8356-edbfff090ae8" RegularExpression="FZ_get_shutdown_action">
+                <Actions>
+                  <Action OrderNumber="1" VariableOp="SetString" VariableName="action" VariableExpression="脚本" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+                    <Condition Enabled="false" Grouping="Or" />
+                    <Conditions />
+                  </Action>
+                </Actions>
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Trigger>
+              <Trigger Enabled="true" Name="关闭游戏" Id="0a8f4862-61d3-4bd9-b769-918fef9db9de" RegularExpression="FZ_get_shutdown_action">
+                <Actions>
+                  <Action OrderNumber="1" VariableOp="SetString" VariableName="action" VariableExpression="游戏" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+                    <Condition Enabled="false" Grouping="Or" />
+                    <Conditions />
+                  </Action>
+                </Actions>
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Trigger>
+              <Trigger Enabled="false" Name="直接关机（关机会强制关闭ACT，建议先手动关闭ACT一次来保存修改。）" Id="87e2a8b8-8bd6-467f-8710-ba0c2aad5e44" RegularExpression="FZ_get_shutdown_action">
+                <Actions>
+                  <Action OrderNumber="1" VariableOp="SetString" VariableName="action" VariableExpression="电脑" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+                    <Condition Enabled="false" Grouping="Or" />
+                    <Conditions />
+                  </Action>
+                </Actions>
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Trigger>
+            </Triggers>
+          </Folder>
+        </Folders>
+        <Triggers>
+          <Trigger Enabled="true" Name="QQ设置" Id="7fad2e4a-bd33-4fd0-948e-305910055771" RegularExpression="FZ_QQBOT:(?&lt;test&gt;.*)">
+            <Actions>
+              <Action OrderNumber="1" VariableOp="SetString" VariableName="你的qq" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="2" VariableOp="SetString" VariableName="机器人qq" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="3" VariableOp="SetString" VariableName="token" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="4" DiscordWebhookURL="https://xn--v9x.net/api/?tracker=qq&amp;bot_qq=${var:机器人qq}&amp;qq=${var:你的qq}&amp;token=${var:token}" DiscordWebhookMessage="${test}" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="DiscordWebhook" ExecutionDelayExpression="1000">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="5" DiscordWebhookURL="https://botapi.dead-war.cn/api/?tracker=qq&amp;bot_qq=${var:机器人qq}&amp;qq=${var:你的qq}&amp;token=${var:token}" DiscordWebhookMessage="${test}" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="DiscordWebhook">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="6" DiscordWebhookURL="https://moguke.top:45015/api/?tracker=qq&amp;bot_qq=${var:机器人qq}&amp;qq=${var:你的qq}&amp;token=${var:token}" DiscordWebhookMessage="${test}" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="DiscordWebhook">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="7" DiscordWebhookURL="https://tata.guomie.club/api/?tracker=qq&amp;bot_qq=${var:机器人qq}&amp;qq=${var:你的qq}&amp;token=${var:token}" DiscordWebhookMessage="${test}" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="DiscordWebhook">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="8" DiscordWebhookURL="https://bot.pencilss.top/api/?tracker=qq&amp;bot_qq=${var:机器人qq}&amp;qq=${var:你的qq}&amp;token=${var:token}" DiscordWebhookMessage="${test}" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="DiscordWebhook">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+            <Conditions />
+          </Trigger>
+        </Triggers>
+      </Folder>
+      <Folder Id="f28fab9d-cdb3-474b-801f-a4f2d34b7e53" Name="(此分组不可禁用！)" Enabled="true">
+        <Folders />
+        <Triggers>
+          <Trigger Enabled="true" Sequential="True" Name="（不可禁用）shutdowm                           " Id="c8a1c32d-83be-439a-8942-3c76cc43af95" RegularExpression="FZ_shutdown:(?&lt;name&gt;.*)">
+            <Actions>
+              <Action OrderNumber="1" LaunchProcessWindowStyle="Hidden" LaunchProcessPathExpression="C:\Windows\System32\cmd.exe" LaunchProcessCmdlineExpression="/c taskkill /f /im  ${name}.exe&amp;&amp;%1 mshta vbscript:CreateObject(&quot;Shell.Application&quot;).ShellExecute(&quot;cmd.exe&quot;,&quot;/c %~s0 ::&quot;,&quot;&quot;,&quot;runas&quot;,1)(window.close)&amp;&amp;exit" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="LaunchProcess">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="computer" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
+                </Condition>
+                <Conditions />
+              </Action>
+              <Action OrderNumber="2" LaunchProcessWindowStyle="Hidden" LaunchProcessPathExpression="C:\Windows\System32\cmd.exe" LaunchProcessCmdlineExpression="/c shutdown -s -t" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="LaunchProcess" ExecutionDelayExpression="10000">
+                <Condition Enabled="true" Grouping="Or">
+                  <ConditionSingle Enabled="true" ExpressionL="${name}" ExpressionTypeL="String" ExpressionR="computer" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                </Condition>
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+            <Conditions />
+          </Trigger>
+          <Trigger Enabled="true" Name="初始化" Id="db9ced11-7ee6-4540-beb1-4224aadbfac2" RegularExpression=".*" PeriodRefire="Deny" RefirePeriodExpression="259200‬000">
+            <Actions>
+              <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="副本次数" VariableExpression="0" TextAuraFontSize="9" TextAuraFontName="宋体" ActionType="Variable">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+            <Conditions />
+          </Trigger>
+        </Triggers>
+      </Folder>
+    </Folders>
+    <Triggers />
+  </ExportedFolder>
+</TriggernometryExport>
